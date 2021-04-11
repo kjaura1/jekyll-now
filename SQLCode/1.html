@@ -156,21 +156,21 @@ summary {
 <div class="fluid-row" id="header">
 <h1 class="title toc-ignore">Assignment 1</h1>
 
-  <em>Create table reservations </em> <br>
-<br>
+  <em>Create table reservations </em> 
+
 <code>
-(facility_ID	varchar(10), <br>
- room_name		varchar(15), <br>
- date		   DATE <br>
-start_hr	   numeric(2) check (start_hr >= 0 and start_hr < 24), <br>
-start_min		numeric(2) check (start_min >= 0 and start_min < 60), <br>
-end_hr			numeric(2) check (end_hr >= 0 and end_hr < 24), <br>
-end_min		numeric(2) check (end_min >= 0 and end_min < 60), <br>
-contact_first_name	varchar(15) <br>
-contact_last_name		varchar(15) <br>
-event_type		varchar(10), <br>
-	 primary key (facility_ID, room_name, date, start_time) <br>
-	);<br>
+(facility_ID	varchar(10), 
+ room_name		varchar(15), 
+ date		   DATE 
+start_hr	   numeric(2) check (start_hr >= 0 and start_hr < 24), 
+start_min		numeric(2) check (start_min >= 0 and start_min < 60), 
+end_hr			numeric(2) check (end_hr >= 0 and end_hr < 24), 
+end_min		numeric(2) check (end_min >= 0 and end_min < 60), 
+contact_first_name	varchar(15) 
+contact_last_name		varchar(15) 
+event_type		varchar(10), 
+	 primary key (facility_ID, room_name, date, start_time) 
+	);
 </code>
   <br>
 
