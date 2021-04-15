@@ -156,98 +156,50 @@ summary {
 <div class="fluid-row" id="header">
 <h1 class="title toc-ignore">Small Relations Insert File</h1>
 
-  <em>Create table reservations </em> 
+  <em>Insert data into table facility </em> 
 <br>
 <code>
-(facility_ID	varchar(10), 
- room_name		varchar(15), 
- date		   DATE 
-start_hr	   numeric(2) check (start_hr >= 0 and start_hr < 24), 
-start_min		numeric(2) check (start_min >= 0 and start_min < 60), 
-end_hr			numeric(2) check (end_hr >= 0 and end_hr < 24), 
-end_min		numeric(2) check (end_min >= 0 and end_min < 60), 
-contact_first_name	varchar(15) 
-contact_last_name		varchar(15) 
-event_type		varchar(10), 
-	 primary key (facility_ID, room_name, date, start_time) 
-	);
+insert into facility values ('1','Crystal Banquet Hall','9724916880','6300 Independence Pkwy','Plano','TX','75023');
 </code>
 <br>
 
-<em>Create table hours </em>
-
+<em>Insert data into hours </em>
 <br>
 <code>
-(facility_ID varchar(10), 
-room_name varchar(15), 
-start_hr	numeric(2) check (start_hr >= 0 and start_hr < 24), 
-start_min	numeric(2) check (start_min >= 0 and start_min < 60), 
-day		   varchar(9), 
-end_hr	numeric(2) check (end_hr >= 0 and end_hr < 24), 
-end_min	numeric(2) check (end_min >= 0 and end_min < 60), 
-primary_key(facility_ID, room_name, start_hr, start_min, day) 
-foreign key (facility_ID) references facility (facility_ID) 
+insert into hours values ('1','Diamond Hall','8','0','Sunday','11','59');
+insert into hours values ('1','Diamond Hall','8','0','Monday','11','59');
+insert into hours values ('1','Diamond Hall','8','0','Tuesday','11','59');
+insert into hours values ('1','Diamond Hall','8','0','Wednesday','11','59');
+insert into hours values ('1','Diamond Hall','8','0','Thursday','11','59');
+insert into hours values ('1','Diamond Hall','8','0','Friday','11','59');
+insert into hours values ('1','Diamond Hall','8','0','Saturday','11','59');
+insert into hours values ('1','Onyx Hall','8','0','Sunday','11','59');
+insert into hours values ('1','Onyx Hall','8','0','Monday','11','59');
+insert into hours values ('1','Onyx Hall','8','0','Tuesday','11','59');
+insert into hours values ('1','Onyx Hall','8','0','Wednesday','11','59');
+insert into hours values ('1','Onyx Hall','8','0','Thursday','11','59');
+insert into hours values ('1','Onyx Hall','8','0','Friday','11','59');
+insert into hours values ('1','Onyx Hall','8','0','Saturday','11','59');
 </code>
 <br>
 <em>create table fees</em>
+	
 <br>
 <code>
-(facility_ID varchar(10), 
-room_name varchar(15), 
-start_hr	numeric(2) check (start_hr >= 0 and start_hr < 24), 
-start_min	numeric(2) check (start_min >= 0 and start_min < 60), 
-day		varchar(9), 
-room_fee	numeric(8), 
-service_fee_pct numeric(2) check (service_fee_pct >=0 and <br> service_fee_pct<100), 
-service_fee_per_person numeric(5), 
-in_house_catering_min numeric(9),
-outside_catering_fee numeric(9), 
-primary_key(facility_ID, room_name, start_hr, start_min, day) 
+
 </code>
 <br>
 
-<em>create table facility</em>
+<em>Insert data into room table</em>
 
 <br>
 <code>
-(facility_ID varchar(15), 
-facility_name varchar(15), 
-phone numeric (10), 
-address varchar(25), 
-city varchar(20), 
-state varchar(2), 
-zip varchar(5), 
-primary_key (facility_ID) 
-	);
+insert into room values ('Diamond Hall','3172','18','250','500','115','315');
+insert into room values ('Onyx Hall','3000','18','188','375','85','235');
+
+
 </code>
 <br>
-	
-<em>create table services</em>
-<br>
-<code>
-(facility_ID varchar(15), 
-inhouse_catering_avail varchar(3),
-outside_catering_allowed varchar(3), 
-primary_key (facility_ID) 
-	);
-</code>
-<br>
-	
-<em>create table room</em>
-<br>
-<code>
-(facility_ID varchar(10), 
-room_name varchar(15), 
-wifi varchar(3), 
-A/V_equip varchar(3), 
-sq_ft varchar(8), 
-ceiling_ht numeric(4), 
-clsrm_style_capacity numeric (9), 
-thtr_style_capacity numeric (9), 
-boardrm_style_capacity numeric(9), 
-banquet_style_capacity numeric(9), 
-primary_key (facility_ID, room_name) 
-	); 
-</code>
+
 </body>
 </html>
