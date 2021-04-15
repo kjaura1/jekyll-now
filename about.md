@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Current graduate student in Social Data Analytics and Research at the University of Texas at Dallas.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+To learn more about my work history, visit my linkedinpage: www.linkedin.com/in/kiranjaura
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[kjaura89@gmail.com](mailto:kjaura89@gmail.com)
