@@ -177,7 +177,8 @@ primary key (facility_ID)
 
 <br>
 <code>
-(facility_room varchar(30),
+(facility_ID varchar(15),
+room_name varchar(30),
 wifi varchar(3),
 AV_equip varchar(3),
 sq_ft varchar(8),
@@ -186,7 +187,9 @@ clsrm_style_capacity numeric (9),
 thtr_style_capacity numeric (9),
 boardrm_style_capacity numeric(9),
 banquet_style_capacity numeric(9),
-primary key (facility_room)
+primary key (facility_id, room_name),
+foreign key (facility_id) references facility (facility_id)
+on delete set null
 	);
 </code>
 <br>
@@ -201,6 +204,7 @@ end_hr	numeric(2) check (end_hr >= 0 and end_hr < 24),
 end_min	numeric(2) check (end_min >= 0 and end_min < 60),
 primary key (facility_ID, day),
 foreign key (facility_ID) references facility (facility_ID)
+on delete set null
 	);
 </code>
 <br>
@@ -209,7 +213,8 @@ foreign key (facility_ID) references facility (facility_ID)
 
 <br>
 <code>
-(facility_room		varchar(30),
+(facility_ID varchar(15),
+room_name varchar(30),
 date		   DATE,
 start_hr	   numeric(2) check (start_hr >= 0 and start_hr < 24),
 start_min		numeric(2) check (start_min >= 0 and start_min < 60),
@@ -218,8 +223,9 @@ end_min		numeric(2) check (end_min >= 0 and end_min < 60),
 contact_first_name	varchar(15),
 contact_last_name		varchar(15),
 event_type		varchar(10),
-primary key (facility_room, date, start_hr, start_min),
-foreign key (facility_room) references room (facility_room)
+primary key (facility_id, room_name, date, start_hr, start_min),
+foreign key (facility_id, room_name) references room (facility_id, room_name)
+on delete set null
 	);
 </code>
 <br>
@@ -228,7 +234,8 @@ foreign key (facility_room) references room (facility_room)
 <em>Create table fees</em>
 <br>
 <code>
-(facility_room varchar(30),
+(facility_ID varchar(15),
+room_name varchar(30),
 day		varchar(9),
 start_hr	numeric(2) check (start_hr >= 0 and start_hr < 24),
 start_min	numeric(2) check (start_min >= 0 and start_min < 60),
@@ -237,8 +244,9 @@ service_fee_pct numeric(2) check (service_fee_pct >=0 and service_fee_pct<100),
 service_fee_per_person numeric(5),
 in_house_catering_min numeric(9),
 outside_catering_fee numeric(9),
-primary key(facility_room, day, start_hr, start_min),
-foreign key (facility_room) references room (facility_room)
+primary key(facility_id, room_name, day, start_hr, start_min),
+foreign key (facility_id, room_name) references room (facility_id, room_name)
+on delete set null
 );
 </code>
 </body>
